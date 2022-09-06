@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PlatformService } from '../platform.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  capStyle = false;
+  constructor(private platformService: PlatformService) { }
+
+  change() {
+    this.platformService.capStyle = this.capStyle;
+  }
 
 }
